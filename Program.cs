@@ -25,6 +25,8 @@ internal class Program
 
         // Display results
         System.Console.WriteLine("\nDice Roll Simulation Results:");
+        System.Console.WriteLine("\nEach \"*\" represents 1% of the total number of rolls");
+        System.Console.WriteLine($"\nTotal number of rolls = {numberOfRolls}");
 
         // Loop through each possible sum (2 to 12)
         for (int i = 2; i <= 12; i++)
