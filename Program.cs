@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Mission2Assignment;
 
 internal class Program
 {
@@ -19,8 +19,9 @@ internal class Program
 
     private static void TimesRolled(int numberOfRolls)
     {
+        DiceStuff ds = new DiceStuff(random); // Pass random to DiceStuff class
         // Get roll results
-        int[] rollResults = RollDice(numberOfRolls);
+        int[] rollResults = ds.RollDice(numberOfRolls);
 
         // Display results
         System.Console.WriteLine("\nDice Roll Simulation Results:");
@@ -37,23 +38,6 @@ internal class Program
 
         // Display the final message after the results
         System.Console.WriteLine("Thank you for using the dice throwing simulator. Goodbye!");
-    }
-
-    // A helper method to simulate rolling dice
-    private static int[] RollDice(int numberOfRolls)
-    {
-        int[] rollResults = new int[13]; // Index 0 and 1 are unused; 2-12 will hold results
-
-        for (int i = 0; i < numberOfRolls; i++)
-        {
-            int die1 = random.Next(1, 7); // Roll first die (1-6)
-            int die2 = random.Next(1, 7); // Roll second die (1-6)
-            int sum = die1 + die2;        // Calculate the sum of the dice
-
-            rollResults[sum]++;           // Increment the corresponding index
-        }
-
-        return rollResults;
     }
 }
 
